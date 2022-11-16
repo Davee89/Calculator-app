@@ -58,8 +58,58 @@
   --Lightyellow: hsl(52, 100%, 62%);
   --Verydarkblue: hsl(198, 20%, 13%);
   --Whitetext: hsl(0, 0%, 100%);
+  /* ? Resseting defaults */
 }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ? Body and main styling  */
 body {
   font-family: "League Spartan";
   font-weight: 700;
+  font-size: 62.5%;
+  max-width: 1440px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#main {
+  background-color: var(--Verydarkdesaturatedblue_mainbackground);
+  padding: 7rem;
+}
+
+/* ? Header styling */
+#header {
+  display: flex;
+  justify-content: space-between;
+}
+.theme {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ? Calc section styling */
+#calculator {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+}
+#result {
+  background-color: var(--Verydarkdesaturatedblue_screenbackground);
+  border-radius: 0.5rem;
+}
+.buttons {
+  background-color: var(--Verydarkdesaturatedblue_togglebackground_keypad_background);
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
 }

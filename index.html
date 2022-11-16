@@ -10,34 +10,43 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet" />
     <title>Frontend Mentor | Calculator app</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
+
   <body>
-    <header id="header">
-      <h1 class="title"></h1>
-      <p class="theme"></p>
-      <label class="label" for="toggle"></label>
-      <input type="checkbox" id="toggle" />
-    </header>
-    <section id="result"></section>
     <main id="main">
-      <button class="button button--calc"></button>
-      <button class="button button--calc"></button>
-      <button class="button button--calc"></button>
-      <button class="button button--del"></button>
-      <button class="button button--calc"></button>
-      <button class="button button--calc"></button>
-      <button class="button button--calc"></button>
-      <button class="button button--calc"></button>
-      <button class="button button--calc"></button>
-      <button class="button button--calc"></button>
-      <button class="button button--calc"></button>
-      <button class="button button--calc"></button>
-      <button class="button button--calc"></button>
-      <button class="button button--calc"></button>
-      <button class="button button--calc"></button>
-      <button class="button button--calc"></button>
-      <button class="button button--del button--long"></button>
-      <button class="button button--long button--sum"></button>
+      <header id="header">
+        <h1 class="title">calc</h1>
+        <div class="theme">
+          <p class="theme__name">theme</p>
+          <label class="label" for="toggle"></label>
+          <input type="checkbox" id="toggle" />
+        </div>
+      </header>
+
+      <section id="calculator">
+        <section id="result"></section>
+        <div class="buttons">
+          <button class="button button--calc">7</button>
+          <button class="button button--calc">8</button>
+          <button class="button button--calc">9</button>
+          <button class="button button--del">del</button>
+          <button class="button button--calc">4</button>
+          <button class="button button--calc">5</button>
+          <button class="button button--calc">6</button>
+          <button class="button button--calc">+</button>
+          <button class="button button--calc">1</button>
+          <button class="button button--calc">2</button>
+          <button class="button button--calc">3</button>
+          <button class="button button--calc">-</button>
+          <button class="button button--calc">.</button>
+          <button class="button button--calc">0</button>
+          <button class="button button--calc">/</button>
+          <button class="button button--calc">x</button>
+          <button class="button button--del button--long">reset</button>
+          <button class="button button--long button--sum">=</button>
+        </div>
+      </section>
     </main>
   </body>
 </html>
