@@ -4,63 +4,67 @@
 /* ! =============  Thanks for review!  ===============! */
 /* ! --------------------------------------------------! */
 
-:root {
+:root .theme--1 {
   /* Theme 1 */
   /* Backgrounds */
-  --Verydarkdesaturatedblue_mainbackground: hsl(222, 26%, 31%);
-  --Verydarkdesaturatedblue_togglebackground_keypad_background: hsl(223, 31%, 20%);
-  --Verydarkdesaturatedblue_screenbackground: hsl(224, 36%, 15%);
+  --mainbackground: hsl(222, 26%, 31%);
+  --togglebackground-keypadbackground: hsl(223, 31%, 20%);
+  --screenbackground: hsl(224, 36%, 15%);
 
   /* Keys */
-  --Desaturateddarkblue_keybackground: hsl(225, 21%, 49%);
-  --Desaturateddarkblue_keyshadow: hsl(224, 28%, 35%);
-  --Red_keybackgroundtoggle: hsl(6, 63%, 50%);
-  --Darkred_keyshadow: hsl(6, 70%, 34%);
-  --Lightgrayishorange_keybackground: hsl(30, 25%, 89%);
-  --Grayishorange_keyshadow: hsl(28, 16%, 65%);
+  --keybackground: hsl(225, 21%, 49%);
+  --keyshadowOne: hsl(224, 28%, 35%);
+  --keybackgroundtoggle: hsl(6, 63%, 50%);
+  --keyshadowTwo: hsl(6, 70%, 34%);
+  --keybackgroundTwo: hsl(30, 25%, 89%);
+  --keyshadowThree: hsl(28, 16%, 65%);
 
   /* Text */
-  --Verydarkgrayishblue: hsl(221, 14%, 31%);
-  --White: hsl(0, 0%, 100%);
-
+  --one: hsl(221, 14%, 31%);
+  --two: hsl(0, 0%, 100%);
+}
+:root .theme--2 {
   /* Theme 2 
    Backgrounds */
-  --Lightgray-mainbackground: hsl(0, 0%, 90%);
-  --Grayishred-togglebackground-keypadbackground: hsl(0, 5%, 81%);
-  --Verylightgray-screenbackground: hsl(0, 0%, 93%);
+  --mainbackground: hsl(0, 0%, 90%);
+  --togglebackground-keypadbackground: hsl(0, 5%, 81%);
+  --screenbackground: hsl(0, 0%, 93%);
 
   /* Keys */
-  --Darkmoderatecyan-keybackground: hsl(185, 42%, 37%);
-  --Verydarkcyan-keyshadow: hsl(185, 58%, 25%);
-  --Orange-keybackground-toggle: hsl(25, 98%, 40%);
-  --Darkorange-keyshadow: hsl(25, 99%, 27%);
-  --Lightgrayishyellow-keybackground: hsl(45, 7%, 89%);
-  --Darkgrayishorange-keyshadow: hsl(35, 11%, 61%);
+  --keybackground: hsl(185, 42%, 37%);
+  --keyshadowOne: hsl(185, 58%, 25%);
+  --keybackgroundtoggle: hsl(25, 98%, 40%);
+  --keyshadowTwo: hsl(25, 99%, 27%);
+  --keybackgroundTwo: hsl(45, 7%, 89%);
+  --keyshadowThree: hsl(35, 11%, 61%);
 
   /* Text */
-  --Verydarkgrayishyellow: hsl(60, 10%, 19%);
-  --White-text: hsl(0, 0%, 100%);
-
+  --one: hsl(60, 10%, 19%);
+  --two: hsl(60, 10%, 19%);
+}
+:root .theme--3 {
   /* Theme 3 */
   /* Backgrounds */
-  --Verydarkviolet-mainbackground: hsl(268, 75%, 9%);
-  --Verydarkviolet-togglebackground-keypadbackground-screenbackground: hsl(268, 71%, 12%);
+  --mainbackground: hsl(268, 75%, 9%);
+  --togglebackground-keypadbackground: hsl(268, 71%, 12%);
+  --screenbackground: hsl(268, 71%, 12%);
 
   /* Keys */
-  --Darkviolet-keybackground: hsl(281, 89%, 26%);
-  --Vividmagenta-keyshadow: hsl(285, 91%, 52%);
-  --Purecyan-keybackground-toggle: hsl(176, 100%, 44%);
-  --Softcyan-keyshadow: hsl(177, 92%, 70%);
-  --Verydarkviolet-keybackground: hsl(268, 47%, 21%);
-  --Darkmagenta-keyshadow: hsl(290, 70%, 36%);
+  --keybackground: hsl(281, 89%, 26%);
+  --keyshadowOne: hsl(285, 91%, 52%);
+  --keybackgroundtoggle: hsl(176, 100%, 44%);
+  --keyshadowTwo: hsl(177, 92%, 70%);
+  --keybackgroundTwo: hsl(268, 47%, 21%);
+  --keyshadowThree: hsl(290, 70%, 36%);
 
   /* Text */
-  --Lightyellow: hsl(52, 100%, 62%);
-  --Verydarkblue: hsl(198, 20%, 13%);
-  --Whitetext: hsl(0, 0%, 100%);
+  --one: hsl(52, 100%, 62%);
+  --three: hsl(198, 20%, 13%);
+  --two: hsl(52, 100%, 62%);
   /* ? Resseting defaults */
 }
-* {
+*,
+input {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -79,10 +83,11 @@ body {
   justify-content: center;
 }
 #main {
-  background-color: var(--Verydarkdesaturatedblue_mainbackground);
+  background-color: var(--mainbackground);
   padding: 5rem 5rem;
   width: fit-content;
   margin: 0 auto;
+  color: var(--two);
 }
 
 /* ? Header styling */
@@ -93,7 +98,6 @@ body {
   margin: 0 auto;
 }
 .title {
-  color: var(--White-text);
   padding: 2rem 16rem 2rem 0;
   font-size: 1.8rem;
 }
@@ -103,7 +107,6 @@ body {
   align-items: center;
   gap: 1rem;
   text-transform: uppercase;
-  color: var(--White-text);
   letter-spacing: 0.1rem;
 }
 
@@ -117,12 +120,12 @@ body {
   margin: 0 auto;
 }
 #result {
-  background-color: var(--Verydarkdesaturatedblue_screenbackground);
+  background-color: var(--screenbackground);
   border-radius: 0.5rem;
 }
 .buttons {
-  background-color: var(--Verydarkdesaturatedblue_togglebackground_keypad_background);
-  padding: 1rem;
+  background-color: var(--togglebackground-keypadbackground);
+  padding: 1.5rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1rem;
@@ -132,13 +135,13 @@ body {
 }
 .button {
   font-family: "League Spartan";
-  color: var(--Verydarkdesaturatedblue_togglebackground_keypad_background);
-  background-color: var(--Lightgrayishorange_keybackground);
+  color: var(--one);
+  background-color: var(--keybackgroundTwo);
   margin: 0;
   padding: 0.8rem 2rem;
   border-radius: 0.5rem;
-  border: 1px solid var(--Lightgrayishorange_keybackground);
-  box-shadow: 0px 4px 1px 0px var(--Grayishorange_keyshadow);
+  border: 1px solid var(--keybackground);
+  box-shadow: 0px 4px 1px 0px var(--keyshadowThree);
   font-size: 2rem;
 }
 .button--long--one {
@@ -148,21 +151,87 @@ body {
   grid-column: 3 / 5;
 }
 .button--del {
-  background-color: var(--Desaturateddarkblue_keybackground);
-  box-shadow: 0px 4px 1px 0px var(--Desaturateddarkblue_keyshadow);
-  border-color: var(--Desaturateddarkblue_keybackground);
-  color: var(--Lightgrayishorange_keybackground);
+  background-color: var(--keybackground);
+  box-shadow: 0px 4px 1px 0px var(--keyshadowOne);
+  border-color: var(--keybackground);
+  color: var(--keybackgroundTwo);
   text-transform: uppercase;
+  padding: 0.9rem 1.1rem;
 }
 .button--sum {
-  color: var(--Lightgrayishorange_keybackground);
-  background-color: var(--Red_keybackgroundtoggle);
-  box-shadow: 0px 4px 1px 0px var(--Darkred_keyshadow);
-  border-color: var(--Darkred_keyshadow);
+  color: var(--keybackgroundTwo);
+  background-color: var(--keybackgroundtoggle);
+  box-shadow: 0px 4px 1px 0px var(--keyshadowTwo);
+  border-color: var(--keyshadowTwo);
 }
+
+/* ! TOGGLE ! */
 .toggle-one {
+  opacity: 0;
+  position: absolute;
+  left: 0.25rem;
+  top: 0.2rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.5rem;
+  z-index: 3;
 }
 .toggle-two {
+  opacity: 0;
+  position: absolute;
+  left: 1.5rem;
+  top: 0.2rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.5rem;
+  z-index: 3;
 }
 .toggle-three {
+  opacity: 0;
+  position: absolute;
+  left: 2.75rem;
+  top: 0.2rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.5rem;
+  z-index: 3;
+}
+.toggles {
+  position: relative;
+  width: 4.1rem;
+  height: 1.5rem;
+  border: 1px solid var(--togglebackground-keypadbackground);
+  border-radius: 1rem;
+  background-color: var(--togglebackground-keypadbackground);
+  z-index: 10;
+  transition: 1s;
+}
+.toggles::before {
+  content: "1 2 3";
+  display: block;
+  font-size: 1rem;
+  position: relative;
+  top: -1.2rem;
+  left: 0.5rem;
+  letter-spacing: 0.3rem;
+}
+.span {
+  display: block;
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.5rem;
+  left: 0.25rem;
+  top: 0.2rem;
+  background-color: var(--keybackgroundtoggle);
+  transition: 1s;
+}
+.span--1 {
+  left: 0.25rem;
+}
+.span--2 {
+  left: 1.5rem;
+}
+.span--3 {
+  left: 2.75rem;
 }
