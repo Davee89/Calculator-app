@@ -122,6 +122,18 @@ body {
 #result {
   background-color: var(--screenbackground);
   border-radius: 0.5rem;
+  font-size: 3rem;
+  padding: 2.5rem;
+  text-align: end;
+  position: relative;
+}
+#result::before {
+  content: "5 + 1 =";
+  position: absolute;
+  top: 0.5rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  opacity: 0.6;
 }
 .buttons {
   background-color: var(--togglebackground-keypadbackground);
