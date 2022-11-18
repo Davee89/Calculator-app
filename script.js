@@ -1,7 +1,6 @@
 "use strict";
 // * Variables needed to execute code below
 const span = document.querySelector(".span");
-const inputs = document.querySelectorAll("input");
 const body = document.querySelector("body");
 const result = document.querySelector(".result");
 const buttonsCalc = document.querySelectorAll(".button--calc");
@@ -11,19 +10,21 @@ const buttonSum = document.querySelector(".button--sum");
 const buttonDelete = document.querySelector("#del");
 const buttonReset = document.querySelector("#reset");
 const buttonDot = document.querySelector(".button--dot");
+const toggles = document.querySelector(".toggles");
 
 // ? Adding default body class for basic site theme
 body.classList.add("theme--1");
 
 // ! Toggle button set up + changing themes
-inputs.forEach((input, i) =>
-  input.addEventListener("click", function () {
+toggles.addEventListener("click", function (e) {
+  console.log(e.target);
+  if (e.target.classList.contains("toggle")) {
     span.classList.remove("span--1", "span--2", "span--3");
     body.classList.remove("theme--1", "theme--2", "theme--3");
-    span.classList.add(`span--${i + 1}`);
-    body.classList.add(`theme--${i + 1}`);
-  })
-);
+    span.classList.add(`span--${e.target.dataset.number}`);
+    body.classList.add(`theme--${e.target.dataset.number}`);
+  }
+});
 
 // ! Calculator settings
 let prevNumber = "",
@@ -50,7 +51,6 @@ const addingNumbers = function () {
   buttonsCalc.forEach((btn) =>
     btn.addEventListener("click", function () {
       currentNumber += btn.textContent;
-
       if (+currentNumber[0] === 0 && currentNumber.length < 2) {
         currentNumber += ".";
       }
