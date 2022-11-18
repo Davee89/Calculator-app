@@ -123,12 +123,11 @@ body {
   background-color: var(--screenbackground);
   border-radius: 0.5rem;
   font-size: 3rem;
-  padding: 2.5rem;
+  padding: 2.3rem;
   text-align: end;
   position: relative;
 }
-#result::before {
-  content: "5 + 1 =";
+.prefix {
   position: absolute;
   top: 0.5rem;
   right: 1.5rem;
