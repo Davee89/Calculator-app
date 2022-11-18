@@ -17,7 +17,6 @@ body.classList.add("theme--1");
 
 // ! Toggle button set up + changing themes
 toggles.addEventListener("click", function (e) {
-  console.log(e.target);
   if (e.target.classList.contains("toggle")) {
     span.classList.remove("span--1", "span--2", "span--3");
     body.classList.remove("theme--1", "theme--2", "theme--3");
@@ -27,6 +26,7 @@ toggles.addEventListener("click", function (e) {
 });
 
 // ! Calculator settings
+
 let prevNumber = "",
   currentNumber = "",
   method = "",
@@ -38,6 +38,7 @@ const displayResult = function () {
   currentNumber = "";
 };
 
+// ? Reset function
 const resetCalc = function () {
   prevNumber = "";
   currentNumber = "";
@@ -51,6 +52,8 @@ const addingNumbers = function () {
   buttonsCalc.forEach((btn) =>
     btn.addEventListener("click", function () {
       currentNumber += btn.textContent;
+
+      // * Adding dot when starting calculation from 0.
       if (+currentNumber[0] === 0 && currentNumber.length < 2) {
         currentNumber += ".";
       }
@@ -63,11 +66,14 @@ addingNumbers();
 const addingMethods = function () {
   buttonsMethod.forEach((btn) =>
     btn.addEventListener("click", function () {
+      // * Mechanism when starting calculating with method (+,-,/,*).
       if (!prevNumber) {
         prevNumber = currentNumber;
         result.textContent = "";
         currentNumber = "";
       }
+
+      // * Calculating result when both - prev and current number are set.
       if (prevNumber && currentNumber) {
         SumUp(method);
       }
@@ -78,6 +84,7 @@ const addingMethods = function () {
 };
 addingMethods();
 
+// * Using switch to make calculation, then displaying it.
 const SumUp = function (m) {
   switch (m) {
     case "+":
@@ -98,11 +105,14 @@ const SumUp = function (m) {
   displayResult();
 };
 
+// ! Button <equal to>
 buttonSum.addEventListener("click", function () {
   SumUp(method);
+  // * Clearing prefix area only when using this button.
   prefix.textContent = "";
 });
 
+// ! Button DEL - normally delete 1 last digit, but when there is no current number then works as reset.
 buttonDelete.addEventListener("click", function () {
   if (currentNumber) {
     currentNumber = currentNumber.slice(0, -1);
@@ -111,14 +121,18 @@ buttonDelete.addEventListener("click", function () {
     resetCalc();
   }
 });
-
+// ! Button RESET
 buttonReset.addEventListener("click", resetCalc);
 
+// ! Button dot
 buttonDot.addEventListener("click", function () {
+  // * No action when dot already used.
   if (currentNumber.includes(".")) return;
+  // * When start with dot - puts 0 before.
   if (!currentNumber) currentNumber = "0.";
   else {
     currentNumber += ".";
   }
+  // * Showing result.
   result.textContent = currentNumber;
 });
