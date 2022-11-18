@@ -1,6 +1,6 @@
 /* ! ------------------------------------------------- ! */
 /* ! ============= Author: David Matras ===============! */
-/* ! =============  Date:   16.11.2022  ===============! */
+/* ! =============  Time:16-18.11.2022  ===============! */
 /* ! =============  Thanks for review!  ===============! */
 /* ! --------------------------------------------------! */
 
@@ -12,11 +12,14 @@
   --screenbackground: hsl(224, 36%, 15%);
 
   /* Keys */
-  --keybackground: hsl(225, 21%, 49%);
+  --keybackground: hsl(225, 23%, 31%);
+  --keyhover: hsl(225, 52%, 66%);
   --keyshadowOne: hsl(224, 28%, 35%);
   --keybackgroundtoggle: hsl(6, 63%, 50%);
+  --sumhover: hsl(6, 88%, 70%);
   --keyshadowTwo: hsl(6, 70%, 34%);
   --keybackgroundTwo: hsl(30, 25%, 89%);
+  --keyhoverTwo: hsl(0, 0%, 100%);
   --keyshadowThree: hsl(28, 16%, 65%);
 
   /* Text */
@@ -32,10 +35,13 @@
 
   /* Keys */
   --keybackground: hsl(185, 42%, 37%);
+  --keyhover: hsl(185, 50%, 56%);
   --keyshadowOne: hsl(185, 58%, 25%);
   --keybackgroundtoggle: hsl(25, 98%, 40%);
+  --sumhover: hsl(25, 91%, 59%);
   --keyshadowTwo: hsl(25, 99%, 27%);
   --keybackgroundTwo: hsl(45, 7%, 89%);
+  --keyhoverTwo: hsl(0, 14%, 97%);
   --keyshadowThree: hsl(35, 11%, 61%);
 
   /* Text */
@@ -51,10 +57,13 @@
 
   /* Keys */
   --keybackground: hsl(281, 89%, 26%);
+  --keyhover: hsl(281, 66%, 64%);
   --keyshadowOne: hsl(285, 91%, 52%);
   --keybackgroundtoggle: hsl(176, 100%, 44%);
+  --sumhover: hsl(176, 94%, 67%);
   --keyshadowTwo: hsl(177, 92%, 70%);
   --keybackgroundTwo: hsl(268, 47%, 21%);
+  --keyhoverTwo: hsl(268, 46%, 43%);
   --keyshadowThree: hsl(290, 70%, 36%);
 
   /* Text */
@@ -88,6 +97,7 @@ body {
   width: fit-content;
   margin: 0 auto;
   color: var(--two);
+  transition: 1s;
 }
 
 /* ? Header styling */
@@ -126,6 +136,7 @@ body {
   padding: 2.3rem;
   text-align: end;
   position: relative;
+  transition: 1s;
 }
 .prefix {
   position: absolute;
@@ -143,6 +154,7 @@ body {
   grid-row: 2 / 5;
   max-width: max-content;
   border-radius: 0.5rem;
+  transition: 1s;
 }
 .button {
   font-family: "League Spartan";
@@ -151,9 +163,12 @@ body {
   margin: 0;
   padding: 0.8rem 2rem;
   border-radius: 0.5rem;
-  border: 1px solid var(--keybackground);
+  border: 1px solid var(--keybackgroundTwo);
   box-shadow: 0px 4px 1px 0px var(--keyshadowThree);
   font-size: 2rem;
+}
+.button:hover {
+  background-color: var(--keyhoverTwo);
 }
 .button--long--one {
   grid-column: 1 / 3;
@@ -169,11 +184,17 @@ body {
   text-transform: uppercase;
   padding: 0.9rem 1.1rem;
 }
+.button--del:hover {
+  background-color: var(--keyhover);
+}
 .button--sum {
   color: var(--keybackgroundTwo);
   background-color: var(--keybackgroundtoggle);
   box-shadow: 0px 4px 1px 0px var(--keyshadowTwo);
   border-color: var(--keyshadowTwo);
+}
+.button--sum:hover {
+  background-color: var(--sumhover);
 }
 
 /* ! TOGGLE ! */
@@ -216,6 +237,10 @@ body {
   background-color: var(--togglebackground-keypadbackground);
   z-index: 10;
   transition: 1s;
+}
+.toggles:hover > span {
+  background-color: var(--keyhover);
+  opacity: 0.8;
 }
 .toggles::before {
   content: "1 2 3";
