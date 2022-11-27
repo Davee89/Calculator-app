@@ -1,0 +1,273 @@
+/* ! ------------------------------------------------- ! */
+/* ! ============= Author: David Matras ===============! */
+/* ! =============  Time:16-18.11.2022  ===============! */
+/* ! =============  Thanks for review!  ===============! */
+/* ! --------------------------------------------------! */
+
+:root .theme--1 {
+  /* Theme 1 */
+  /* Backgrounds */
+  --mainbackground: hsl(222, 26%, 31%);
+  --togglebackground-keypadbackground: hsl(223, 31%, 20%);
+  --screenbackground: hsl(224, 36%, 15%);
+
+  /* Keys */
+  --keybackground: hsl(225, 23%, 31%);
+  --keyhover: hsl(225, 52%, 66%);
+  --keyshadowOne: hsl(224, 28%, 35%);
+  --keybackgroundtoggle: hsl(6, 63%, 50%);
+  --sumhover: hsl(6, 88%, 70%);
+  --keyshadowTwo: hsl(6, 70%, 34%);
+  --keybackgroundTwo: hsl(30, 25%, 89%);
+  --keyhoverTwo: hsl(0, 0%, 100%);
+  --keyshadowThree: hsl(28, 16%, 65%);
+
+  /* Text */
+  --one: hsl(221, 14%, 31%);
+  --two: hsl(0, 0%, 100%);
+}
+:root .theme--2 {
+  /* Theme 2 
+   Backgrounds */
+  --mainbackground: hsl(0, 0%, 90%);
+  --togglebackground-keypadbackground: hsl(0, 5%, 81%);
+  --screenbackground: hsl(0, 0%, 93%);
+
+  /* Keys */
+  --keybackground: hsl(185, 42%, 37%);
+  --keyhover: hsl(185, 50%, 56%);
+  --keyshadowOne: hsl(185, 58%, 25%);
+  --keybackgroundtoggle: hsl(25, 98%, 40%);
+  --sumhover: hsl(25, 91%, 59%);
+  --keyshadowTwo: hsl(25, 99%, 27%);
+  --keybackgroundTwo: hsl(45, 7%, 89%);
+  --keyhoverTwo: hsl(0, 14%, 97%);
+  --keyshadowThree: hsl(35, 11%, 61%);
+
+  /* Text */
+  --one: hsl(60, 10%, 19%);
+  --two: hsl(60, 10%, 19%);
+}
+:root .theme--3 {
+  /* Theme 3 */
+  /* Backgrounds */
+  --mainbackground: hsl(268, 75%, 9%);
+  --togglebackground-keypadbackground: hsl(268, 71%, 12%);
+  --screenbackground: hsl(268, 71%, 12%);
+
+  /* Keys */
+  --keybackground: hsl(281, 89%, 26%);
+  --keyhover: hsl(281, 66%, 64%);
+  --keyshadowOne: hsl(285, 91%, 52%);
+  --keybackgroundtoggle: hsl(176, 100%, 44%);
+  --sumhover: hsl(176, 94%, 67%);
+  --keyshadowTwo: hsl(177, 92%, 70%);
+  --keybackgroundTwo: hsl(268, 47%, 21%);
+  --keyhoverTwo: hsl(268, 46%, 43%);
+  --keyshadowThree: hsl(290, 70%, 36%);
+
+  /* Text */
+  --one: hsl(52, 100%, 62%);
+  --three: hsl(198, 20%, 13%);
+  --two: hsl(52, 100%, 62%);
+  /* ? Resseting defaults */
+}
+*,
+input {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ? Body and main styling  */
+body {
+  font-family: "League Spartan";
+  font-weight: 700;
+  font-size: 62.5%;
+  max-width: 1440px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#main {
+  background-color: var(--mainbackground);
+  padding: 5rem 5rem;
+  width: fit-content;
+  margin: 0 auto;
+  color: var(--two);
+  transition: 1s;
+}
+
+/* ? Header styling */
+#header {
+  display: flex;
+  justify-content: space-between;
+  max-width: max-content;
+  margin: 0 auto;
+}
+.title {
+  padding: 2rem 16rem 2rem 0;
+  font-size: 1.8rem;
+}
+.theme {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+/* ? Calc section styling */
+#calculator {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  max-width: min-content;
+  margin: 0 auto;
+}
+#result {
+  background-color: var(--screenbackground);
+  border-radius: 0.5rem;
+  font-size: 3rem;
+  padding: 2.3rem;
+  text-align: end;
+  position: relative;
+  transition: 1s;
+}
+.prefix {
+  position: absolute;
+  top: 0.5rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  opacity: 0.6;
+}
+.buttons {
+  background-color: var(--togglebackground-keypadbackground);
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  grid-row: 2 / 5;
+  max-width: max-content;
+  border-radius: 0.5rem;
+  transition: 1s;
+}
+.button {
+  font-family: "League Spartan";
+  color: var(--one);
+  background-color: var(--keybackgroundTwo);
+  margin: 0;
+  padding: 0.8rem 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--keybackgroundTwo);
+  box-shadow: 0px 4px 1px 0px var(--keyshadowThree);
+  font-size: 2rem;
+}
+.button:hover {
+  background-color: var(--keyhoverTwo);
+}
+.button--long--one {
+  grid-column: 1 / 3;
+}
+.button--long--two {
+  grid-column: 3 / 5;
+}
+.button--del {
+  background-color: var(--keybackground);
+  box-shadow: 0px 4px 1px 0px var(--keyshadowOne);
+  border-color: var(--keybackground);
+  color: var(--keybackgroundTwo);
+  text-transform: uppercase;
+  padding: 0.9rem 1.1rem;
+}
+.button--del:hover {
+  background-color: var(--keyhover);
+}
+.button--sum {
+  color: var(--keybackgroundTwo);
+  background-color: var(--keybackgroundtoggle);
+  box-shadow: 0px 4px 1px 0px var(--keyshadowTwo);
+  border-color: var(--keyshadowTwo);
+}
+.button--sum:hover {
+  background-color: var(--sumhover);
+}
+
+/* ! TOGGLE ! */
+.toggle-one {
+  opacity: 0;
+  position: absolute;
+  left: 0.25rem;
+  top: 0.2rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.5rem;
+  z-index: 3;
+}
+.toggle-two {
+  opacity: 0;
+  position: absolute;
+  left: 1.5rem;
+  top: 0.2rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.5rem;
+  z-index: 3;
+}
+.toggle-three {
+  opacity: 0;
+  position: absolute;
+  left: 2.75rem;
+  top: 0.2rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.5rem;
+  z-index: 3;
+}
+.toggles {
+  position: relative;
+  width: 4.1rem;
+  height: 1.5rem;
+  border: 1px solid var(--togglebackground-keypadbackground);
+  border-radius: 1rem;
+  background-color: var(--togglebackground-keypadbackground);
+  z-index: 10;
+  transition: 1s;
+}
+.toggles:hover > span {
+  background-color: var(--keyhover);
+  opacity: 0.8;
+}
+.toggles::before {
+  content: "1 2 3";
+  display: block;
+  font-size: 1rem;
+  position: relative;
+  top: -1.2rem;
+  left: 0.5rem;
+  letter-spacing: 0.3rem;
+}
+.span {
+  display: block;
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 0.5rem;
+  left: 0.25rem;
+  top: 0.2rem;
+  background-color: var(--keybackgroundtoggle);
+  transition: 1s;
+}
+.span--1 {
+  left: 0.25rem;
+}
+.span--2 {
+  left: 1.5rem;
+}
+.span--3 {
+  left: 2.75rem;
+}
